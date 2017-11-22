@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Simple bash prompt by koljah
+
+# Define the color of the simple-bash-prompt
+simple_bash_prompt_command_color="\033[0;97m"
+simple_bash_prompt_device_color="\033[1;34m"
+simple_bash_prompt_dir_color="\033[1;37m"
+simple_bash_prompt_user_color="\033[1;36m"
+simple_bash_prompt_separator1_color="\033[1;37m"
+simple_bash_prompt_separator2_color="\033[1;37m"
+simple_bash_prompt_bracket_color="\033[1;32m"
+simple_bash_prompt_symbol_color="\033[1;31m"
+simple_bash_prompt_reset="\033[m"
+
+# Define the prompt terminator character
+if [[ $UID -eq 0 ]]; then
+  simple_bash_prompt_symbol="#"
+else
+  simple_bash_prompt_symbol="\$"
+fi
+
+# Set the color with the exit status of the last command
+simple_bash_prompt_exit_status_color () {
+  simple_bash_prompt_exit_status=$?
+  if [ $simple_bash_prompt_exit_status -eq 0 ]; then
+    echo -e "\033[0;32m"
+  else
+    echo -e "\033[0;31m"
+  fi
+  exit $simple_bash_prompt_exit_status
+}
+
+# Define the simple-bash-prompt
+PS1="\[\$(simple_bash_prompt_exit_status_color)\]┬─\
+\[$simple_bash_prompt_bracket_color\][\
+\[$simple_bash_prompt_user_color\]\u\
+\[$simple_bash_prompt_separator1_color\]@\
+\[$simple_bash_prompt_device_color\]\h\
+\[$simple_bash_prompt_separator2_color\]:\
+\[$simple_bash_prompt_dir_color\]\w\
+\[$simple_bash_prompt_bracket_color\]]\
+\[\$(simple_bash_prompt_exit_status_color)\]─\
+\[$simple_bash_prompt_bracket_color\][\
+\[\$(simple_bash_prompt_exit_status_color)\]\t\
+\[$simple_bash_prompt_bracket_color\]]\n\
+\[\$(simple_bash_prompt_exit_status_color)\]╰─>\
+\[$simple_bash_prompt_symbol_color\]$simple_bash_prompt_symbol \[$simple_bash_prompt_command_color\]"
