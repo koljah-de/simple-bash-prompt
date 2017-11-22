@@ -6,6 +6,6 @@ A simple colored bash prompt with exit status recognition of the last command.
 ### Installing
 Copy *.bash_prompt* to your home directory.
 
-Add  `. ~/.bash_prompt` to your .bashrc.
+Add  `. ~/.bash_prompt` to your *.bashrc*.
 
 Finished.
