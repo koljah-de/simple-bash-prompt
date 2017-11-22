@@ -13,7 +13,7 @@ simple_bash_prompt_symbol_color="\033[1;31m"
 simple_bash_prompt_reset="\033[m"
 
 # Define the prompt terminator character
-if [[ $UID -eq 0 ]]; then
+if [ $UID -eq 0 ]; then
   simple_bash_prompt_symbol="#"
 else
   simple_bash_prompt_symbol="\$"
