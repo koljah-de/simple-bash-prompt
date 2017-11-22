@@ -1,9 +1,7 @@
 # simple-bash-prompt
 A simple colored bash prompt with exit status recognition of the last command.
 
-![simple-bash-prompt screenshot][screenshot]
-
-[screenshot]: screenshot.png
+![Screenshot](screenshot.png "Screenshot")
 
 ### Installing
 Copy *.bash_prompt* to your home directory.
