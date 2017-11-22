@@ -14,20 +14,20 @@ simple_bash_prompt_reset="\033[m"
 
 # Define the prompt terminator character
 if [ $UID -eq 0 ]; then
-  simple_bash_prompt_symbol="#"
+    simple_bash_prompt_symbol="#"
 else
-  simple_bash_prompt_symbol="\$"
+    simple_bash_prompt_symbol="\$"
 fi
 
 # Set the color with the exit status of the last command
 simple_bash_prompt_exit_status_color () {
-  simple_bash_prompt_exit_status=$?
-  if [ $simple_bash_prompt_exit_status -eq 0 ]; then
-    echo -e "\033[0;32m"
-  else
-    echo -e "\033[0;31m"
-  fi
-  exit $simple_bash_prompt_exit_status
+    simple_bash_prompt_exit_status=$?
+    if [ $simple_bash_prompt_exit_status -eq 0 ]; then
+        echo -e "\033[0;32m"
+    else
+        echo -e "\033[0;31m"
+    fi
+    exit $simple_bash_prompt_exit_status
 }
 
 # Define the simple-bash-prompt
