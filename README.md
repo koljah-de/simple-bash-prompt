@@ -1,5 +1,5 @@
 # simple-bash-prompt
-A simple colored bash prompt with exit status recognition of the last command.
+A simple colored bash prompt with exit status recognition and git branch detection.
 
 ![Screenshot](screenshot.png "Screenshot")
 
