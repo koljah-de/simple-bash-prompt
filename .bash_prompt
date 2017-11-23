@@ -32,10 +32,10 @@ simple_bash_prompt_is_git_repo () {
 # Print the git branch
 simple_bash_prompt_get_git_branch () {
     simple_bash_prompt_git_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-    if [ -n $simple_bash_prompt_git_branch ]; then
-        echo $simple_bash_prompt_git_branch
-    else
+    if [ "$simple_bash_prompt_git_branch" == "HEAD" ]; then
         echo "(no branch)"
+    else
+        echo $simple_bash_prompt_git_branch
     fi
 }
 
