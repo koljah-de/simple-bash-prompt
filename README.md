@@ -6,6 +6,6 @@ A simple colored bash prompt with exit status recognition and git branch detecti
 ### Installing
 Copy *.bash_prompt* to your home directory.
 
-Add  `. ~/.bash_prompt` to your *.bashrc*.
+Add  `source ~/.bash_prompt` to your *.bashrc*.
 
 Finished.
