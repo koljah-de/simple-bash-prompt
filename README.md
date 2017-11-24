@@ -11,7 +11,6 @@ Add  `source ~/.bash_prompt` to your *~/.bashrc*.
 Finished.
 
 ### Better Tab Completion
-
 For a better tab completion you can add these lines to your *~/.inputrc*:
 
 ```bash
@@ -43,6 +42,18 @@ set menu-complete-display-prefix On
 set echo-control-characters off
 
 ```
-### Additional Info
 Here you can find additional info and a better explanation of the commands: <br/>
 https://wiki.archlinux.org/index.php/Readline
+
+### Some more useful options for the ~.bashrc
+```bash
+# Stop logging of repeated identical commands or lines starting with space
+export HISTCONTROL=ignoreboth
+
+# Append to the history file, don't overwrite it
+shopt -s histappend
+
+# Check the window size after each command and, if necessary, update the values of LINES and COLUMNS
+shopt -s checkwinsize
+
+```
