@@ -5,7 +5,7 @@ if [[ "$response" == "y" || "$response" == "Y" || -z $response ]]; then
     if [ -f .bash_prompt ]; then
         if [ -f ~/.bash_prompt ]; then 
             echo -e "\033[0;33m There already exists a .bash_prompt in your home directory.\033[m"
-            echo -e -n "\033[0;33m Do you want to overwrite it? (y/N)? \033[m"
+            echo -e -n "\033[0;33m Do you want to replace it? (y/N)? \033[m"
             read response
             if [[ "$response" == "y" || "$response" == "Y" ]]; then
                 echo -e  "\033[0;97m Copy .bash_prompt to home directory and add \"source ~/.bash_prompt\" to your .bashrc.\033[m"
