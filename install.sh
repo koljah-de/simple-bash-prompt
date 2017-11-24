@@ -8,14 +8,14 @@ if [[ "$response" == "y" || "$response" == "Y" || -z $response ]]; then
             echo -e -n "\033[0;33m Do you want to replace it? (y/N)? \033[m"
             read response
             if [[ "$response" == "y" || "$response" == "Y" ]]; then
-                echo -e  "\033[0;97m Copy .bash_prompt to home directory and add \"source ~/.bash_prompt\" to your .bashrc.\033[m"
+                echo -e  "\033[0;97m Copy .bash_prompt to your home directory and add \"source ~/.bash_prompt\" to your .bashrc.\033[m"
                 if [ "$(pwd)" != "$(eval echo ~$USER)" ]; then
                     cp .bash_prompt ~/.bash_prompt
                 fi
                 if [[ -f ~/.bashrc && -n "$(tail -n1 ~/.bashrc)" ]]; then
                     echo "" >> ~/.bashrc
                     echo "" >> ~/.bashrc
-                elif [[ -f ~/.bashrc && -z "$(tail -n1 ~/.bashrc)" && -n $(cat ~/.bashrc) ]]; then
+                elif [[ -f ~/.bashrc && -z "$(tail -n1 ~/.bashrc)" && -n "$(cat ~/.bashrc)" ]]; then
                     echo "" >> ~/.bashrc
                 fi
                 echo "# execute github.com/koljah-de/simple-bash-pompt" >> ~/.bashrc
@@ -25,14 +25,14 @@ if [[ "$response" == "y" || "$response" == "Y" || -z $response ]]; then
                 echo -e "\033[0;31m Did not install simple-bash-prompt.\033[m"
             fi
         else
-            echo -e "\033[0;97m Copy .bash_prompt to home directory and add \"source ~/.bash_prompt\" to your .bashrc.\033[m"
+            echo -e "\033[0;97m Copy .bash_prompt to your home directory and add \"source ~/.bash_prompt\" to your .bashrc.\033[m"
             if [ "$(pwd)" != "$(eval echo ~$USER)" ]; then
                 cp .bash_prompt ~/.bash_prompt
             fi
             if [[ -f ~/.bashrc && -n "$(tail -n1 ~/.bashrc)" ]]; then
                 echo "" >> ~/.bashrc
                 echo "" >> ~/.bashrc
-            elif [[ -f ~/.bashrc && -z "$(tail -n1 ~/.bashrc)" && -n $(cat ~/.bashrc) ]]; then
+            elif [[ -f ~/.bashrc && -z "$(tail -n1 ~/.bashrc)" && -n "$(cat ~/.bashrc)" ]]; then
                 echo "" >> ~/.bashrc
             fi
             echo "# execute github.com/koljah-de/simple-bash-pompt" >> ~/.bashrc
@@ -52,7 +52,7 @@ if [[ "$response" == "y" || "$response" == "Y" || -z $response ]]; then
     if [[ -f ~/.inputrc && -n "$(tail -n1 ~/.inputrc)" ]]; then
         echo "" >> ~/.inputrc
         echo "" >> ~/.inputrc
-    elif [[ -f ~/.inputrc && -z "$(tail -n1 ~/.inputrc)" && -n $(cat ~/.inputrc) ]]; then
+    elif [[ -f ~/.inputrc && -z "$(tail -n1 ~/.inputrc)" && -n "$(cat ~/.inputrc)" ]]; then
         echo "" >> ~/.inputrc
     fi
     echo "# Faster tab completion" >> ~/.inputrc
@@ -92,7 +92,7 @@ if [[ "$response" == "y" || "$response" == "Y" || -z $response ]]; then
     if [[ -f ~/.bashrc && -n "$(tail -n1 ~/.bashrc)" ]]; then
         echo "" >> ~/.bashrc
         echo "" >> ~/.bashrc
-    elif [[ -f ~/.bashrc && -z "$(tail -n1 ~/.bashrc)" && -n $(cat ~/.bashrc) ]]; then
+    elif [[ -f ~/.bashrc && -z "$(tail -n1 ~/.bashrc)" && -n "$(cat ~/.bashrc)" ]]; then
         echo "" >> ~/.bashrc
     fi
     echo "# Stop logging of repeated identical commands or lines starting with space" >> ~/.bashrc
