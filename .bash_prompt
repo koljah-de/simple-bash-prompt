@@ -7,6 +7,7 @@ simple_bash_prompt_command_color="\033[0;97m"
 simple_bash_prompt_device_color="\033[1;34m"
 simple_bash_prompt_dir_color="\033[1;37m"
 simple_bash_prompt_git_branch_color="\033[1;33m"
+simple_bash_prompt_git_color="\033[0;33m"
 simple_bash_prompt_user_color="\033[1;36m"
 simple_bash_prompt_separator_color="\033[1;37m"
 simple_bash_prompt_symbol_color="\033[1;31m"
@@ -33,7 +34,7 @@ simple_bash_prompt_is_git_repo () {
 simple_bash_prompt_get_git_branch () {
     simple_bash_prompt_git_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
     if [ "$simple_bash_prompt_git_branch" = "HEAD" ]; then
-        echo "(no branch)"
+        echo "no branch"
     else
         echo $simple_bash_prompt_git_branch
     fi
@@ -55,8 +56,10 @@ simple_bash_prompt="\[\$(simple_bash_prompt_exit_status_color $simple_bash_promp
 \[\$(simple_bash_prompt_exit_status_color $simple_bash_prompt_exit_status)\]\t\
 \[$simple_bash_prompt_bracket_color\]]"
 if $(simple_bash_prompt_is_git_repo); then
-    simple_bash_prompt+=" \[$simple_bash_prompt_separator_color\]on "
+    simple_bash_prompt+="\[\$(simple_bash_prompt_exit_status_color $simple_bash_prompt_exit_status)\]─"
+    simple_bash_prompt+="\[$simple_bash_prompt_git_color\]["
     simple_bash_prompt+="\[$simple_bash_prompt_git_branch_color\]\$(simple_bash_prompt_get_git_branch)"
+    simple_bash_prompt+="\[$simple_bash_prompt_git_color\]]"
 fi
 simple_bash_prompt+="\n\[\$(simple_bash_prompt_exit_status_color $simple_bash_prompt_exit_status)\]╰─>\
 \[$simple_bash_prompt_symbol_color\]$simple_bash_prompt_symbol \[$simple_bash_prompt_command_color\]"
