@@ -6,13 +6,13 @@ A simple colored bash prompt with exit status recognition and git branch detecti
 ### Installing
 Copy *.bash_prompt* to your home directory.
 
-Add  `source ~/.bash_prompt` to your *.bashrc*.
+Add  `source ~/.bash_prompt` to your *~/.bashrc*.
 
 Finished.
 
 ### Better Tab Completion
 
-For a better tab completion you can add these lines to your *.input.rc*:
+For a better tab completion you can add these lines to your *~/.inputrc*:
 
 ```bash
 # Faster tab completion
