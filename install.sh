@@ -1,17 +1,15 @@
 #!/bin/bash
 echo -e -n "\033[0;97mDo you want to install simple-bash-prompt? (Y/n)? \033[m"
 read response
-if [[ "$response" == "y" || "$response" == "Y" || -z $response ]]; then
+if [[ "$response" == "y" || "$response" == "Y" || -z "$response" ]]; then
     if [ -f .bash_prompt ]; then
-        if [ -f ~/.bash_prompt ]; then 
+        if [[ -f ~/.bash_prompt && "$(pwd)" != "$(eval echo ~$USER)" ]]; then 
             echo -e "\033[0;33m There already exists a .bash_prompt in your home directory.\033[m"
             echo -e -n "\033[0;33m Do you want to replace it? (y/N)? \033[m"
             read response
             if [[ "$response" == "y" || "$response" == "Y" ]]; then
                 echo -e  "\033[0;97m Copy .bash_prompt to your home directory and add \"source ~/.bash_prompt\" to your .bashrc.\033[m"
-                if [ "$(pwd)" != "$(eval echo ~$USER)" ]; then
-                    cp .bash_prompt ~/.bash_prompt
-                fi
+                cp .bash_prompt ~/.bash_prompt
                 if [[ -f ~/.bashrc && -n "$(tail -n1 ~/.bashrc)" ]]; then
                     echo "" >> ~/.bashrc
                     echo "" >> ~/.bashrc
@@ -48,7 +46,7 @@ fi
 
 echo -e -n "\033[0;97mDo you want to add better tab completion to ~/.inputrc? (Y/n)? \033[m"
 read response
-if [[ "$response" == "y" || "$response" == "Y" || -z $response ]]; then
+if [[ "$response" == "y" || "$response" == "Y" || -z "$response" ]]; then
     if [[ -f ~/.inputrc && -n "$(tail -n1 ~/.inputrc)" ]]; then
         echo "" >> ~/.inputrc
         echo "" >> ~/.inputrc
@@ -88,7 +86,7 @@ fi
 
 echo -e -n "\033[0;97mDo you want to add some more useful options to ~/.bashrc? (Y/n)? \033[m"
 read response
-if [[ "$response" == "y" || "$response" == "Y" || -z $response ]]; then
+if [[ "$response" == "y" || "$response" == "Y" || -z "$response" ]]; then
     if [[ -f ~/.bashrc && -n "$(tail -n1 ~/.bashrc)" ]]; then
         echo "" >> ~/.bashrc
         echo "" >> ~/.bashrc
