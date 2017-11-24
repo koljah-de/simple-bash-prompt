@@ -19,6 +19,9 @@ For a better tab completion you can add these lines to your *~/.inputrc*:
 set show-all-if-ambiguous on
 set completion-ignore-case on
 
+# TAB through the suggestions
+TAB:menu-complete
+
 # Move between words with Ctrl+Left and Ctrl+Right
 "\e[1;5D": backward-word
 "\e[1;5C": forward-word
@@ -27,7 +30,7 @@ set completion-ignore-case on
 "\e[A":history-search-backward
 "\e[B":history-search-forward
 "\e[C":forward-char
-"e\[D":backward-char
+"\e[D":backward-char
 
 # Enable colors
 set colored-stats On
