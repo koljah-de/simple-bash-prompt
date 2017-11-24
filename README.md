@@ -10,6 +10,8 @@ Copy *.bash_prompt* to your home directory.
 
 Add  `source ~/.bash_prompt` to your *~/.bashrc*.
 
+Or go to your git directory and run `./install.sh`
+
 Finished.
 
 ### Better Tab Completion
