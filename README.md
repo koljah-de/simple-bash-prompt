@@ -22,8 +22,8 @@ set completion-ignore-case on
 TAB:menu-complete
 
 # Move between words with Ctrl+Left and Ctrl+Right
-"\e[1;5D": backward-word
-"\e[1;5C": forward-word
+"\e[1;5D":backward-word
+"\e[1;5C":forward-word
 
 # Enable the history search mode
 "\e[A":history-search-backward
