@@ -45,7 +45,7 @@ set echo-control-characters off
 Here you can find additional info and a better explanation of the commands: <br/>
 https://wiki.archlinux.org/index.php/Readline
 
-### Some more useful options for the ~.bashrc
+### Some more useful options for the ~/.bashrc
 ```bash
 # Stop logging of repeated identical commands or lines starting with space
 export HISTCONTROL=ignoreboth
