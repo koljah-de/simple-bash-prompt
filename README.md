@@ -4,11 +4,9 @@ A simple colored bash prompt with exit status recognition and git branch detecti
 ![Screenshot](screenshot.png "Screenshot")
 
 ### Installing
-Run `git clone git@github.com:koljah-de/simple-bash-prompt.git` or `git clone https://github.com/koljah-de/simple-bash-prompt.git`.
-
-Copy *.bash_prompt* to your home directory.
-
-Add  `source ~/.bash_prompt` to your *~/.bashrc*.
+1. Run `git clone git@github.com:koljah-de/simple-bash-prompt.git` or `git clone https://github.com/koljah-de/simple-bash-prompt.git`.
+2. Copy *.bash_prompt* to your home directory.
+3. Add  `source ~/.bash_prompt` to your *~/.bashrc*.
 
 Or go to your git directory and run `./install.sh`
 
