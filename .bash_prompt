@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Simple bash prompt by koljah
+# simple bash prompt by koljah
+# https://github.com/koljah-de/simple-bash-prompt/
 
-# Define the color of the simple-bash-prompt
+# define the color of the simple-bash-prompt
 simple_bash_prompt_bracket_color="\033[1;32m"
 simple_bash_prompt_command_color="\033[0;97m"
 simple_bash_prompt_device_color="\033[1;34m"
@@ -13,10 +14,10 @@ simple_bash_prompt_separator_color="\033[1;37m"
 simple_bash_prompt_symbol_color="\033[1;31m"
 simple_bash_prompt_reset="\033[m"
 
-# Define the prompt terminator character
+# define the prompt terminator character
 simple_bash_prompt_symbol="\\$"
 
-# Set the color with the exit status of the last command
+# set the color with the exit status of the last command
 simple_bash_prompt_exit_status_color () {
     if [ $1 -eq 0 ]; then
         echo -e "\033[0;32m"
@@ -25,12 +26,12 @@ simple_bash_prompt_exit_status_color () {
     fi
 }
 
-# Check if current directory is a git repo
+# check if current directory is a git repo
 simple_bash_prompt_is_git_repo () {
     git rev-parse 2> /dev/null
 }
 
-# Print the git branch
+# print the git branch
 simple_bash_prompt_get_git_branch () {
     simple_bash_prompt_git_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
     if [ "$simple_bash_prompt_git_branch" = "HEAD" ]; then
@@ -40,7 +41,7 @@ simple_bash_prompt_get_git_branch () {
     fi
 }
 
-# Define the simple-bash-prompt
+# define the simple-bash-prompt
 simple_bash_prompt_build_prompt () {
 simple_bash_prompt_exit_status=$?
 simple_bash_prompt="\[\$(simple_bash_prompt_exit_status_color $simple_bash_prompt_exit_status)\]┬─\
