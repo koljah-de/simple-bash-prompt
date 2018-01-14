@@ -59,3 +59,7 @@ shopt -s histappend
 shopt -s checkwinsize
 
 ```
+
+### Better bash behavior
+* For a better bash behavior if a command not found and to get suggested packages install: ***command-not-found***
+* For a better bash completion install the package: ***bash-completion***
